@@ -1,38 +1,181 @@
-.App {
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --main-pink: #D9ADD6;
+  --main-grey: #494C4F;
+}
+
+.optimal-width {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@font-face { 
+  font-family: homeday; 
+  src: url('../public/assets/fonts/Homeday.ttf');
+} 
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: unset;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 52px;
+  font-family: "homeday";
+  color: var(--main-pink);
+  margin: unset;
+  font-weight: 400;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-family: "homeday";
+  color: var(--main-pink);
+  font-size: 42px;
+  margin: unset;
+  font-weight: 400;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  font-size: 36px;
+  color: var(--main-grey);
+  margin-top: 0;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h4 {
+  color: white;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+h5 {
+  margin: 0 0 20px;
+}
+
+p {
+  font-size: 18px;
+  text-align: justify;
+  color: #979797;
+  margin: 0;
+}
+
+.call-to-action {
+  padding: 11px 21px;
+  background-color: var(--main-pink);
+  border-radius: 4px;
+  color: white;
+  transition: 0.5s;
+  height: fit-content;
+  width: fit-content;
+}
+
+.call-to-action.grey {
+  background-color: var(--main-grey);
+}
+
+.call-to-action:hover {
+  filter: brightness(0.85);
+}
+
+main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.center {
+  text-align: center;
+}
+
+.grid-3 {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 60px;
+  padding: 20px;
+}
+
+.percent33 {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(33% - 35px);
+  width: 100%;
+}
+
+.percent66 {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(66% - 35px);
+  width: 100%;
+}
+
+.percent40 {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(40% - 35px);
+  width: 100%;
+}
+
+.percent60 {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(60% - 35px);
+  width: 100%;
+}
+@media screen and (max-width: 992px) {
+  .main-grid {
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .percent33 {
+      max-width: unset;
+      width: 100%;
+  }
+  
+  .percent66 {
+      max-width: unset;
+      width: 100%;
+  }
+  
+  .percent40 {
+      max-width: unset;
+      width: 100%;
+  }
+  
+  .percent60 {
+      max-width: unset;
+      width: 100%;
+  }
+
+  .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 60px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .grid-3 {
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 30px;
   }
 }

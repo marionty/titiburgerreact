@@ -1,0 +1,292 @@
+main h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.dashed-line {
+    width: 5px;
+    margin: 0 auto;
+}
+
+/* ==============MAIN PAGE======================== */
+
+.main-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.percent50 {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(50% - 35px);
+    width: 100%;
+}
+
+.percent50 h3 {
+    font-size: 30px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.number {
+    margin: auto;
+    margin-left: 5px;
+}
+
+.number p {
+    color: black;
+    background-color: rgb(210, 190, 190);
+    padding: 20px 50px;
+    text-align: center;
+}
+
+#nos-burgers {
+    margin-top: 100px;
+}
+
+.choise-burger {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.choise-burger p {
+    color: black;
+    font-size: 20px;
+}
+
+.choise-burger-mobile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+form {
+    width: 100%;
+}
+
+label img {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.picture img {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 60px;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 60px;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    padding: 20px;
+}
+
+.work-plan {
+    background-color: var(--main-grey-claire);
+    width: 180px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.dashed {
+    border-top: dashed;
+}
+
+.dashed:last-of-type {
+    border-bottom: dashed;
+}
+
+.grid-2 .dashed:nth-of-type(3) {
+    border-bottom: dashed;
+}
+
+.grid-3 :nth-child(2) {
+    font-size: 25px;
+    color: black;
+    margin: auto;
+}
+
+.text-left {
+    color: black;
+    font-size: 20px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.price .btn-form {
+    margin: unset;
+}
+
+.price p {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 2rem;
+}
+
+.btn-form {
+    margin: 60px auto;
+    padding: 20px 125px;
+    font-size: 38px;
+}
+
+.slider-burger-block {
+    height: 75px;
+    width: 75px;
+    padding: 10px;
+    background: rgba(87, 109, 139, 0.49);
+    border-radius: 5px;
+}
+
+.slider-burger {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    background: #D9D9D9;
+}
+
+.bar-slider-burger-after {
+    position: absolute;
+    height: 5px;
+    width: 675px;
+    background-color: var(--main-grey-claire);
+    z-index: -1;
+    left: 80px;
+}
+
+.bar-slider-burger-after::before {
+    content: "Paiement";
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    right: 0;
+    top: -9px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bar-slider-burger {
+    align-items: center;
+    position: relative;
+    z-index: 9999;
+}
+
+.slider-burger {
+    object-fit: cover;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 992px) {
+    .grid-3 {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 30px;
+    }
+
+    .choise-burger {
+        flex-direction: column;
+    }
+
+    .percent50 {
+        max-width: 100%;
+    }
+
+    .bar-slider-burger-after {
+
+        width: 860px;
+    }
+
+    .text-left {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .grid-3 {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 30px;
+    }
+
+    .choise-burger {
+        flex-direction: column;
+    }
+
+    .percent50 {
+        max-width: calc(100% - 35px);
+    }
+
+    .bar-slider-burger-after {
+
+        height: 565px;
+        width: 5px;
+        left: unset;
+    }
+
+    .text-left {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 40px;
+
+    }
+
+    .bar-slider-burger {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bar-slider-burger-after::before {
+        content: none;
+    }
+
+    .bar-slider-burger-after::after {
+        content: "Paiment";
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        right: -25px;
+        bottom: 0;
+        padding-top: 10px;
+    }
+
+    .btn-form {
+        padding: 20px 30px;
+    }
+
+}
